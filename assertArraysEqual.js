@@ -1,5 +1,6 @@
 const assertArrayEqual = function (actual, expected) {
-  if (actual === expected) {
+  const isEqual = eqArrays(actual, expected);
+  if (isEqual) {
     console.log(`Assertion Passed:  ${actual}  ===   ${expected}`);
   } else console.log(`Assertion Failed:  ${actual}  !==  ${expected}`);
 };
@@ -14,8 +15,9 @@ const eqArrays = function (array1, array2) {
   return isMatching;
 };
 
-assertArrayEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => true
-assertArrayEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => false
+assertArrayEqual([1, 2, 3], [1, 2, 3], true); // => trueCLEAR
 
-assertArrayEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => true
-assertArrayEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true); // => false
+// assertArrayEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => false
+
+// assertArrayEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => true
+// assertArrayEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true); // => false
