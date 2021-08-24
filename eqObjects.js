@@ -16,30 +16,27 @@ const eqArrays = function (array1, array2) {
 
 const eqObjects = function (object1, object2) {
   let isEquivalent = false;
-  
+
   if (Object.keys(object1).length !== Object.keys(object2).length) {
     return false;
   }
   for (const key in object1) {
-  
     if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
       isEquivalent = eqArrays(object1[key], object2[key]);
       if (!isEquivalent) {
-       
+        return false;
+      }
+    } else {
+      if (object1[key] !== object2[key]) {
         return false;
       }
     }
-    else{
-      
-     if (object1[key] !== object2[key]) {
-    
-      return false;
-    }
-  }
   }
 
   return true;
 };
+
+module.exports = eqObjects;
 
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
