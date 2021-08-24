@@ -1,9 +1,9 @@
 const assertEqual = require("./assertEqual");
 
 const tail = function (arr) {
-  const tailArr = [];
-  for (let i = 1; i < arr.length; i++) {
-    tailArr.push(arr[i]);
+  let tailArr = "";
+  for (let i = 0; i < arr.length; i++) {
+    tailArr = arr[i];
   }
   return tailArr;
 };
