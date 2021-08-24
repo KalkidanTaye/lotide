@@ -1,4 +1,9 @@
 {
+  "name": "lotide",
+  "Author": "Kalkidan Alemu",
+  "email": "kali.taye@gmail.com",
+  "url": "https://github.com/KalkidanTaye",
+  "description": "Lotide is a clone of lodash.com",
   "devDependencies": {
     "chai": "^4.3.4",
     "mocha": "^9.1.0"
@@ -6,5 +11,4 @@
   "scripts": {
     "test": "mocha"
   }
-  
 }
